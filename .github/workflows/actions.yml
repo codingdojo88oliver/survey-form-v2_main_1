@@ -19,6 +19,6 @@ jobs:
     - name: List docker container
       run: docker ps
     - name: Run tests from the built image
-      run: docker run survey-form-v2_main_1 sh -c "npm test"
+      run: docker run survey-form-v2_main_1_main sh -c "npm test"
     - name: Compose down the docker
       run: docker-compose -f "docker-compose.yml" down
