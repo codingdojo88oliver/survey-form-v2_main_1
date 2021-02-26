@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      - uses: action/checkout@v2
+      uses: action/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      - uses: action/setup-node@v2
+      uses: action/setup-node@v2
     - name: Compose up the docker
-      - run: docker-compose -f "docker-compose.yml" up -d --build
+      run: docker-compose -f "docker-compose.yml" up -d --build
     - name: Run tests from the built image
-      - run: docker run survey-form-v2_main_1 sh -c "npm test"
+      run: docker run survey-form-v2_main_1 sh -c "npm test"
     - name: Compose down the docker
-      - run: docker-compose -f "docker-compose.yml" down
+      run: docker-compose -f "docker-compose.yml" down
